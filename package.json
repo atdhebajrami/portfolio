@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "homepage": "https://atdhebajrami.github.io/portfolio/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
