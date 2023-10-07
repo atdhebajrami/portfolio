@@ -15,6 +15,7 @@ module.exports = {
       tertiary: "#AEF78E",
       quaternary: "#C0D461",
       background: '#2E4057',
+      circle: '#596D87',
 
       transparent: 'transparent',
       current: 'currentColor',
@@ -51,7 +52,8 @@ module.exports = {
       'top-4': 'center top 1rem',
     },
     fontFamily: {
-      'inter': ['"Inter"', 'sans-serif']
+      'inter': ['"Inter"', 'sans-serif'],
+      'robotomono': ['"Roboto Mono"', 'monospace']
     },
     extend: {},
   },
