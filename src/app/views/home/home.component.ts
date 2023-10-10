@@ -147,7 +147,7 @@ export class HomeComponent {
   }
 
   scrollToElement(element){
-    element.nativeElement.scrollIntoView();
+    element.nativeElement.scrollIntoView({behavior: 'smooth'});
   }
   
 }

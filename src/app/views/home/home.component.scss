@@ -29,6 +29,8 @@
 
 .scroll-snap-container{
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    @apply tw-scroll-pt-20
 }
 
 .scroll-snap-item{
