@@ -1,24 +1,33 @@
 <div class="tw-w-full tw-h-full">
 
+    <!-- Background Animation -->
     <div class="tw-w-full tw-h-screen tw-flex tw-items-center tw-fixed tw-top-0 tw-overflow-hidden">
-        <div class="circle"></div>
+        <svg class="tw-w-full tw-h-full" preserveAspectRatio="xMidYMid slice" viewBox="10 10 80 80">
+            <path class="out-top tw-fill-circle" d="M37-5C25.1-14.7,5.7-19.1-9.2-10-28.5,1.8-32.7,31.1-19.8,49c15.5,21.5,52.6,22,67.2,2.3C59.4,35,53.7,8.5,37-5Z"/>
+            <path class="in-top tw-fill-background" d="M20.6,4.1C11.6,1.5-1.9,2.5-8,11.2-16.3,23.1-8.2,45.6,7.4,50S42.1,38.9,41,24.5C40.2,14.1,29.4,6.6,20.6,4.1Z"/>
+            <path class="out-bottom tw-fill-circle" d="M105.9,48.6c-12.4-8.2-29.3-4.8-39.4.8-23.4,12.8-37.7,51.9-19.1,74.1s63.9,15.3,76-5.6c7.6-13.3,1.8-31.1-2.3-43.8C117.6,63.3,114.7,54.3,105.9,48.6Z"/>
+            <path class="in-bottom tw-fill-background" d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z"/>
+        </svg>       
     </div>
 
+    <!-- Toolbar -->
     <div class="tw-w-full tw-h-fit tw-sticky tw-top-0 tw-flex tw-justify-between tw-items-center tw-z-50">
         <img class="tw-w-20 tw-h-20 tw-object-contain tw-mx-4" src="assets/icons/logo.svg"/>
         <p class="tw-font-inter tw-font-medium tw-text-base tw-mx-4 md:tw-mx-8">
             <span (click)="setLanguage(lang)" [ngClass]="selectedLanguage == lang ? 'tw-text-primary hover:tw-text-quaternary' : 'tw-text-white hover:tw-text-gray'" *ngFor="let index = index; let lang of languages">{{lang | uppercase}}<span class="tw-text-white hover:tw-text-white tw-px-2" *ngIf="(index + 1) < languages.length">/</span></span>
         </p>
     </div>
+
+    <!-- Content -->
     <div class="tw-w-full tw-h-fit tw-flex tw-overflow-hidden">
-        <div class="tw-w-full tw-max-h-screen tw-overflow-auto scrollbar-hide tw-z-30 -tw-mt-20">
-            <div class="tw-w-full tw-h-screen tw-flex tw-flex-col tw-justify-evenly">
+        <div (scroll)="onScroll($event)" class="tw-w-full tw-max-h-screen tw-overflow-auto scrollbar-hide tw-z-30 -tw-mt-20 scroll-snap-container">
+            <div #elementOne class="tw-w-full tw-h-screen tw-flex tw-flex-col tw-justify-evenly tw-scroll-m-20 scroll-snap-item">
                 <h4 class="tw-w-full tw-h-fit tw-font-inter tw-font-medium tw-text-2xl tw-text-white tw-tracking-wide tw-leading-loose tw-pl-8 md:tw-pl-16 tw-pr-14 md:tw-pr-28"><span class="tw-text-3xl">👋</span> {{'hey-there' | translate}}, I'm <span class="tw-font-robotomono tw-font-bold tw-text-primary hover:tw-text-quaternary">Atdhe Bajrami</span> a <span class="tw-font-robotomono tw-font-bold tw-text-primary hover:tw-text-quaternary">Software Engineer</span> from <span class="tw-font-robotomono tw-font-bold tw-text-primary hover:tw-text-quaternary">Kosovo</span> 🇽🇰</h4>
                 <div class="tw-w-full tw-h-fit tw-flex tw-justify-center tw-items-center tw-px-14 md:tw-px-28">
                     <button class="tw-w-fit tw-h-fit tw-font-robotomono tw-font-medium tw-text-base tw-bg-primary hover:tw-bg-quaternary tw-text-white tw-rounded-[5px] tw-py-4 tw-px-10">Contact Me</button>
                 </div>
             </div>
-            <div class="tw-w-full tw-h-screen tw-pl-8 md:tw-pl-16 tw-pr-14 md:tw-pr-28">
+            <div #elementTwo class="tw-w-full tw-h-screen tw-scroll-m-20 tw-pl-8 md:tw-pl-16 tw-pr-14 md:tw-pr-28 scroll-snap-item">
                 <h4 class="tw-w-full tw-h-fit tw-font-robotomono tw-font-medium tw-text-xl tw-text-white tw-mb-8">Skills</h4>
                 <div class="tw-w-full tw-h-fit tw-max-h-[70vh] tw-flex tw-flex-col md:tw-flex-row md:tw-flex-wrap tw-gap-4 tw-overflow-auto tw-pr-2">
                     <div *ngFor="let skill of skills" class="max-md:tw-flex-1 md:tw-grow tw-bg-white tw-flex tw-justify-center tw-items-center tw-rounded-[5px] tw-p-4">
@@ -29,14 +38,14 @@
                     </div>
                 </div>
             </div>
-            <div class="tw-w-full tw-h-screen"></div>
-            <div class="tw-w-full tw-h-screen"></div>
+            <div #elementThree class="tw-w-full tw-h-screen scroll-snap-item"></div>
+            <div #elementFour class="tw-w-full tw-h-screen scroll-snap-item"></div>
         </div>
         <div class="tw-w-fit tw-h-screen tw-flex tw-flex-col tw-justify-center tw-items-center tw-gap-4 tw-fixed tw-right-0 tw-px-4 tw-z-40 -tw-mt-20">
-            <div class="tw-w-4 tw-h-[1px] tw-bg-white hover:tw-bg-gray"></div>
-            <div class="tw-w-6 tw-h-[2px] tw-bg-primary hover:tw-bg-quaternary"></div>
-            <div class="tw-w-4 tw-h-[1px] tw-bg-white hover:tw-bg-gray"></div>
-            <div class="tw-w-4 tw-h-[1px] tw-bg-white hover:tw-bg-gray"></div>
+            <div (click)="scrollToElement(elementOneRef)" [ngClass]="currentPosition == 0 ? 'tw-w-6 tw-h-[2px] tw-bg-primary hover:tw-bg-quaternary' : 'tw-w-4 tw-h-[1px] tw-bg-white hover:tw-bg-gray'"></div>
+            <div (click)="scrollToElement(elementTwoRef)" [ngClass]="currentPosition == 1 ? 'tw-w-6 tw-h-[2px] tw-bg-primary hover:tw-bg-quaternary' : 'tw-w-4 tw-h-[1px] tw-bg-white hover:tw-bg-gray'"></div>
+            <div (click)="scrollToElement(elementThreeRef)" [ngClass]="currentPosition == 2 ? 'tw-w-6 tw-h-[2px] tw-bg-primary hover:tw-bg-quaternary' : 'tw-w-4 tw-h-[1px] tw-bg-white hover:tw-bg-gray'"></div>
+            <div (click)="scrollToElement(elementFourRef)" [ngClass]="currentPosition == 3 ? 'tw-w-6 tw-h-[2px] tw-bg-primary hover:tw-bg-quaternary' : 'tw-w-4 tw-h-[1px] tw-bg-white hover:tw-bg-gray'"></div>
         </div>
     </div>
 </div>

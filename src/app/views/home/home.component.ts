@@ -11,6 +11,13 @@ import { fromEvent } from 'rxjs';
 })
 export class HomeComponent {
 
+  @ViewChild('elementOne') elementOneRef: ElementRef;
+  @ViewChild('elementTwo') elementTwoRef: ElementRef;
+  @ViewChild('elementThree') elementThreeRef: ElementRef;
+  @ViewChild('elementFour') elementFourRef: ElementRef;
+
+  currentPosition: number = 0;
+
   languages = ['en', 'de'];
   selectedLanguage: string = 'en';
 
@@ -110,6 +117,37 @@ export class HomeComponent {
     this.selectedLanguage = language;
     this.translate.use(this.selectedLanguage);
     localStorage.setItem('selectedLanguage', this.selectedLanguage);
+  }
+
+  onScroll(event: any){
+    const elementOne = this.elementOneRef.nativeElement.getBoundingClientRect().top;
+    const elementTwo = this.elementTwoRef.nativeElement.getBoundingClientRect().top;
+    const elementThree = this.elementThreeRef.nativeElement.getBoundingClientRect().top;
+    const elementFour = this.elementFourRef.nativeElement.getBoundingClientRect().top;
+
+    var array = [elementOne, elementTwo, elementThree, elementFour];
+    var goal = 0;
+    
+    var closest = array.reduce(function(prev, curr) {
+      return (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev);
+    });
+
+    if(closest == elementOne){
+      this.currentPosition = 0;
+    }
+    if(closest == elementTwo){
+      this.currentPosition = 1;
+    }
+    if(closest == elementThree){
+      this.currentPosition = 2;
+    }
+    if(closest == elementFour){
+      this.currentPosition = 3;
+    }
+  }
+
+  scrollToElement(element){
+    element.nativeElement.scrollIntoView();
   }
   
 }
