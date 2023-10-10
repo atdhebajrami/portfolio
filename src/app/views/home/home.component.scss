@@ -30,9 +30,10 @@
 .scroll-snap-container{
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
-    @apply tw-scroll-pt-20
+    scroll-snap-stop: always;
 }
 
 .scroll-snap-item{
     scroll-snap-align: start;
+    @apply tw-scroll-m-20
 }
