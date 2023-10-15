@@ -19,7 +19,7 @@ export class HomeComponent {
   currentPosition: number = 0;
 
   languages = ['en', 'de'];
-  selectedLanguage: string = 'en';
+  selectedLanguage: string = 'de';
 
   skills = [
     {
@@ -104,6 +104,67 @@ export class HomeComponent {
     },
   ];
 
+  project = {
+    title: "Sunny Hill Festival",
+    platforms: [
+      {
+        title: "open-in-play-store",
+        iconPath: "assets/icons/android_icon.svg",
+        link: "https://play.google.com/store/apps/details?id=com.company.sunnyhillmobile&hl=en&gl=US"
+      },
+      {
+        title: "open-in-app-store",
+        iconPath: "assets/icons/apple_icon.svg",
+        link: "https://apps.apple.com/al/app/sunny-hill-festival/id1634476298"
+      },
+    ],
+    imagePath: "assets/icons/sunny_hill_festival_image.jpg",
+    techStack: [
+      "Node.js",
+      "Express.js",
+      "Typescript",
+      "Javascript",
+      "Angular",
+      "Ionic",
+      "Html",
+      "Css",
+      "Sass",
+      "MySQL",
+      "Firebase",
+      "Amazon Web Services",
+      "Git",
+      "Gitlab",
+    ],
+  }
+
+  contacts = [
+    {
+      title: "Instagram",
+      iconPath: "assets/icons/instagram_icon.svg",
+      link: "https://www.instagram.com/atdhebajramii/",
+    },
+    {
+      title: "Facebook",
+      iconPath: "assets/icons/facebook_icon.svg",
+      link: "https://www.facebook.com/profile.php?id=100005978838474",
+    },
+    {
+      title: "LinkedIn",
+      iconPath: "assets/icons/linkedin_icon.svg",
+      link: "https://www.linkedin.com/in/atdhe-bajrami-b970031b2",
+    },
+    {
+      title: "GitHub",
+      iconPath: "assets/icons/github_icon_2.svg",
+      link: "https://www.github.com/atdhebajrami",
+    },
+    {
+      title: "E-Mail",
+      iconPath: "assets/icons/email_icon.svg",
+      link: "mailto:atdheuaccounts@yahoo.com",
+    },
+  ]
+
   constructor(
     private translate: TranslateService,
   ){
@@ -148,6 +209,10 @@ export class HomeComponent {
 
   scrollToElement(element){
     element.nativeElement.scrollIntoView({behavior: 'smooth'});
+  }
+
+  goToContact(){
+    this.elementFourRef.nativeElement.scrollIntoView({behavior: 'smooth'});
   }
   
 }
