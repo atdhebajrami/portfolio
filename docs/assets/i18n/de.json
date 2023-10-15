@@ -1,3 +1,20 @@
 {
-    "hey-there": "Hallo"
+    "hey-there": "Hallo",
+    "i-am": "ich bin",
+    "name-surname": "Atdhe Bajrami",
+    "a": "ein",
+    "software-engineer": "Software Ingenieur",
+    "from": "aus dem",
+    "country": "Kosovo",
+    "country-code": "🇽🇰",
+    "contact-me": "Kontaktiere mich",
+    "skills": "Fähigkeiten",
+    "top-pick-project": "Top Pick Projekt",
+    "project-text1": "Das Sunny Hill Festival ist das berühmteste Musikfestival in Südosteuropa. Es wird von der berühmten albanischen Sängerin Dua Lipa und ihrer Familie organisiert und versammelt bei jeder Ausgabe Tausende von Menschen, wobei viele internationale Musikkünstler auftreten.",
+    "about-the-project": "Über das Projekt",
+    "project-text2": "Bei früheren Festivalausgaben war die einzige Möglichkeit, Speisen und Getränke zu bezahlen, Bargeld, daher haben wir uns entschieden, eine bargeldlose mobile App zu entwickeln, bei der jeder Benutzer sein eigenes Portemonnaie hat und damit bezahlen kann.",
+    "tech-stack": "Tech Stack",
+    "platforms": "Plattformen",
+    "open-in-play-store": "Im Play Store öffnen",
+    "open-in-app-store": "Im App Store öffnen"
 }
